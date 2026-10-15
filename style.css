@@ -1,0 +1,87 @@
+body {
+    font-family: "Inter", sans-serif;
+    background-color: black;
+    margin: 0px;
+}
+
+.titre {
+    font-family: "Permanent Marker", cursive;
+}
+
+span.latin {
+    font-style: italic;
+}
+
+/* Tout ce qui concerne le nav */
+
+nav {
+    background-image: url(images/bandeau.png) ;
+    height: 500px;
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+nav ul {
+      list-style: none;
+      display: flex;
+      font-size: 20px;
+}
+nav a {
+    color: whitesmoke;
+    font-family: "Permanent Marker", cursive;
+    text-decoration: none;
+    transition: color 0.2s;
+    flex: 1;
+}
+nav a:hover {
+    color: #fdc82a;
+}
+
+.menu {
+    margin: 0 auto;
+}
+.recherche {
+
+
+}
+
+/* Notre body index. */
+main {
+    background-color: rgb(255, 255, 255);
+    max-width: 900px;
+    margin: 9px auto;
+    padding: 24px;
+    box-sizing: border-box;
+
+}
+
+.prez {
+display: flex;
+padding: 10px;
+}
+
+.prez .intro {
+flex: 1;
+line-height: 1.5;
+}
+
+.prez #logo-accueil {
+    margin-left: auto;
+    width: 200px;
+    flex-shrink: 0;
+    align-self: flex-start
+}
+
+/* Les spécificités de nos recettes */
+
+
+/* footer */
+footer {
+    color: antiquewhite;
+    font-size: 10px;
+    display: block;
+    margin-right: 0 auto;
+    max-width: 450px;
+    margin-top: 50px;
+}
