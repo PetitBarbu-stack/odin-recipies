@@ -1,3 +1,10 @@
+img{
+    max-width: 100%;
+    width: auto;
+
+
+}
+
 body {
     font-family: "Inter", sans-serif;
     background-color: black;
@@ -6,6 +13,7 @@ body {
 
 .titre {
     font-family: "Permanent Marker", cursive;
+    font-weight: normal;
 }
 
 span.latin {
@@ -17,7 +25,6 @@ span.latin {
 nav {
     background-image: url(images/bandeau.png) ;
     height: 500px;
-    width: auto;
     background-size: cover;
     background-repeat: no-repeat;
    
@@ -32,7 +39,6 @@ nav a {
     font-family: "Permanent Marker", cursive;
     text-decoration: none;
     transition: color 0.2s;
-    flex: 1;
 }
 nav a:hover {
     color: #fdc82a;
@@ -41,8 +47,45 @@ nav a:hover {
 .menu {
     margin: 0 auto;
 }
-.recherche {
 
+/* Barre de recherche - pour l'instant sans effets */
+
+li.recherche {
+display: flex;
+align-items: center;
+gap: 2px;
+}
+
+.recherche input {
+    border-radius: 50px;
+    background-color: rgb(255 255 255 / 85%);
+    border: none;
+    padding: 5px;
+    font-family: inherit;
+    flex: 1;
+}
+
+.recherche input::placeholder{
+color: rgb(87, 85, 85);
+}
+
+.recherche input:focus {
+    outline-offset: -2px;
+    outline: 3px solid #e70328;
+}
+
+
+.recherche button {
+    border-radius: 50px;
+    background-color: #fdc82a;
+    padding: 3px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+}
+
+.recherche button:hover {
+background-color: #fcd560;
 
 }
 
@@ -58,7 +101,7 @@ main {
 
 .prez {
 display: flex;
-padding: 10px;
+gap: 20px;
 }
 
 .prez .intro {
@@ -70,7 +113,85 @@ line-height: 1.5;
     margin-left: auto;
     width: 200px;
     flex-shrink: 0;
-    align-self: flex-start
+    align-self: flex-start;
+}
+
+/* Nos recettes végétariennes. Elles sont pour l'instant sur l'acceuil, elle seront ensuite à 
+un certain endroit de la page accueil (plus bas) et le lien "recette végé" renverra à cet endroit 
+de la page ;) */
+
+.cartes {
+    display: flex;
+    gap: 10px;
+    padding: 0px;
+    flex-wrap: wrap;
+}
+
+
+.carte {
+flex: 1 1 200px;
+list-style: none;
+}
+
+.carte a {
+    color: rgb(3, 3, 3);
+    font-family: "Inter", cursive;
+    text-decoration: none;
+}
+
+.carte h2 {
+    color: rgb(3, 3, 3);
+    font-family: "Permanent Marker", cursive;
+    text-decoration: none
+}
+.carte img {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+/* Effet de survol sur les cartes : comprendre la logique :hover sur parents/enfants. */
+
+.visuel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+.visuel p {
+    position: absolute;
+    inset: 0;
+    background-color: rgb(0 0 0/ 45%);
+    color: aliceblue;
+    margin: 0;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visuel:hover p {
+    opacity: 1 ;
+}
+
+.visuel img {
+    transition: filter 0.4s, transform 0.4s
+}
+
+.visuel:hover img {
+    filter: blur(4px);
+    transform: scale(1.05);
+}
+
+.plats {
+    text-align: center;
+    padding: 5px;
 }
 
 /* Les spécificités de nos recettes */
@@ -81,7 +202,19 @@ footer {
     color: antiquewhite;
     font-size: 10px;
     display: block;
-    margin-right: 0 auto;
-    max-width: 450px;
-    margin-top: 50px;
+}
+
+.mentions {
+      max-width:fit-content
+}
+
+.retour {
+    text-align: center;
+
+}
+
+#footlien {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
 }
