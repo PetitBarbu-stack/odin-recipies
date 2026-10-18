@@ -27,19 +27,23 @@ nav {
     height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
-   
 }
+
 nav ul {
       list-style: none;
       display: flex;
       font-size: 20px;
+      flex-wrap: wrap;
+      padding: 0;
 }
+
 nav a {
     color: whitesmoke;
     font-family: "Permanent Marker", cursive;
     text-decoration: none;
     transition: color 0.2s;
 }
+
 nav a:hover {
     color: #fdc82a;
 }
@@ -217,4 +221,75 @@ footer {
     color: white;
     text-decoration: none;
     font-size: 15px;
+}
+
+/* Ici, on stylise les pages de recettes. */
+
+/* L'image de la recette et le logo */
+
+.titre.recette{
+    text-align: center;
+}
+
+.visualrecettes img {
+    height: 260px;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.logorecettes { 
+    width: 200px;
+    margin: -10px -10px 20px -5px ;
+}
+
+/* Le corps de notre recette et les puces */
+
+.ingredients {
+    background-color: rgba(231, 150, 0, 0.14);
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgb(95, 0, 0, 10%)
+
+}
+.ingredients-ul{
+    padding-left: 30px;
+    list-style: none;
+    line-height: 1.5;
+
+}
+
+.etapes-ol{
+counter-reset: etape;
+list-style: none;
+ line-height: 1.5;
+}
+
+.etapes-ol li{
+counter-increment: etape;
+display: flex;
+line-height: 1.60;
+gap: 10px;
+align-items: flex-start;
+margin-bottom: 15px;
+}
+
+.etapes-ol li::before {
+    content: counter(etape);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #e70328;
+    font-family: "Permanent Marker", cursive;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 23px;
+}
+
+
+@media (max-width: 600px) {
+    /* ici, des règles normales, avec leurs sélecteurs */
+ .prez { flex-direction: column; }
 }
